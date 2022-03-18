@@ -33,6 +33,8 @@ body {
   justify-content: center;
   align-items: center;
   border: 1px solid #000;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
 }
 
 .cell:first-child,
@@ -54,37 +56,70 @@ body {
   border-bottom: none;
 }
 
+.cell.x,
+.cell.circle {
+  cursor: not-allowed;
+  transition: all 0.3s ease-in-out;
+}
+
+.cell.x::after,
 .cell.x::before,
-.cell.x::after {
+.cell.circle::before,
+.cell.circle::after {
+  background: #000;
+}
+
+.board.x .cell:not(.x):not(.circle):hover::before,
+.board.x .cell:not(.x):not(.circle):hover::after,
+.board.circle .cell:not(.x):not(.circle):hover::before,
+.board.circle .cell:not(.x):not(.circle):hover::after {
+  background: #ddd;
+}
+
+.cell.x::before,
+.cell.x::after,
+.board.x .cell:not(.x):not(.circle):hover::before,
+.board.x .cell:not(.x):not(.circle):hover::after {
   position: absolute;
   content: " ";
   width: calc(var(--mark-size) * 0.15);
   height: var(--mark-size);
-  background: #000;
   border-radius: 50%;
+  transition: all 0.3s ease-in-out;
 }
 
-.cell.x::before {
+.cell.x::before,
+.board.x .cell:not(.x):not(.circle):hover::before {
   transform: rotate(45deg);
+  transition: all 0.3s ease-in-out;
 }
-.cell.x::after {
+.cell.x::after,
+.board.x .cell:not(.x):not(.circle):hover::after {
   transform: rotate(-45deg);
+  transition: all 0.3s ease-in-out;
 }
 
 .cell.circle::before,
-.cell.circle::after {
+.cell.circle::after,
+.board.circle .cell:not(.x):not(.circle):hover::before,
+.board.circle .cell:not(.x):not(.circle):hover::after {
   position: absolute;
   content: " ";
   border-radius: 50%;
+  transition: all 0.3s ease-in-out;
 }
 
-.cell.circle::before {
+.cell.circle::before,
+.board.circle .cell:not(.x):not(.circle):hover::before {
   width: calc(var(--mark-size) * 0.8);
   height: calc(var(--mark-size) * 0.8);
-  background: #000;
+  /* background: #000; */
+  transition: all 0.3s ease-in-out;
 }
-.cell.circle::after {
+.cell.circle::after,
+.board.circle .cell:not(.x):not(.circle):hover::after {
   background: #fff;
   width: calc(var(--mark-size) * 0.6);
   height: calc(var(--mark-size) * 0.6);
+  transition: all 0.3s ease-in-out;
 }
