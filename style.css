@@ -28,7 +28,7 @@ body {
 .cell {
   width: var(--cell-size);
   height: var(--cell-size);
-  /* background: #000; */
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -56,6 +56,7 @@ body {
 
 .cell.x::before,
 .cell.x::after {
+  position: absolute;
   content: " ";
   width: calc(var(--mark-size) * 0.15);
   height: var(--mark-size);
@@ -68,4 +69,22 @@ body {
 }
 .cell.x::after {
   transform: rotate(-45deg);
+}
+
+.cell.circle::before,
+.cell.circle::after {
+  position: absolute;
+  content: " ";
+  border-radius: 50%;
+}
+
+.cell.circle::before {
+  width: calc(var(--mark-size) * 0.8);
+  height: calc(var(--mark-size) * 0.8);
+  background: #000;
+}
+.cell.circle::after {
+  background: #fff;
+  width: calc(var(--mark-size) * 0.6);
+  height: calc(var(--mark-size) * 0.6);
 }
