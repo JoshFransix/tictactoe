@@ -123,3 +123,41 @@ body {
   height: calc(var(--mark-size) * 0.6);
   transition: all 0.3s ease-in-out;
 }
+
+.win-message {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.95);
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-size: 5rem;
+}
+
+.win-message button {
+  outline: none;
+  border: none;
+  border: 1px solid #fff;
+  border-radius: 10px;
+  color: #fff;
+  font-size: 2rem;
+  padding: 1rem 2rem;
+  background: #000;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.win-message button:hover {
+  border-color: #000;
+  background: #fff;
+  color: #000;
+}
+
+.win-message.show {
+  display: flex;
+}
