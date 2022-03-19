@@ -13,6 +13,7 @@ const winCombinations = [
 ];
 
 const cellElements = document.querySelectorAll("[data-cell]");
+const winMessageTextElement = document.querySelector("[data-win-message-text]");
 const board = document.getElementById("board");
 let circleTurn;
 
@@ -31,6 +32,7 @@ function handleClick(e) {
   // Place mark
   placeMark(cell, currentClass);
   if (checkWin(currentClass)) {
+    endGame(false);
   }
   // Check for win
   // Check for draw
@@ -60,7 +62,7 @@ function setBoardHoverClass() {
 function checkWin(currentClass) {
   return winCombinations.some((combination) => {
     return combination.every((index) => {
-      return cellElements[index].classList(currentClass);
+      return cellElements[index].classList.contains(currentClass);
     });
   });
 }
