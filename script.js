@@ -5,9 +5,14 @@ const cellElements = document.querySelectorAll("[data-cell]");
 const board = document.getElementById("board");
 let circleTurn;
 
-cellElements.forEach((cell) => {
-  cell.addEventListener("click", handleClick, { once: true });
-});
+startGame();
+
+function startGame() {
+  cellElements.forEach((cell) => {
+    cell.addEventListener("click", handleClick, { once: true });
+  });
+  setBoardHoverClass();
+}
 
 function handleClick(e) {
   const cell = e.target;
@@ -29,4 +34,12 @@ function swapTurns() {
   circleTurn = !circleTurn;
 }
 
-function setBoardHoverClass() {}
+function setBoardHoverClass() {
+  board.classList.remove(xClass);
+  board.classList.remove(circleClass);
+  if (circleTurn) {
+    board.classList.add(circleClass);
+  } else {
+    board.classList.add(xClass);
+  }
+}
