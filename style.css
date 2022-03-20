@@ -12,6 +12,7 @@
 
 body {
   margin: 0;
+  background: #002147;
 }
 
 .board {
@@ -23,6 +24,7 @@ body {
   justify-items: center;
   align-items: center;
   grid-template-columns: repeat(3, auto);
+  /* background-color: #fff; */
 }
 
 .cell {
@@ -32,9 +34,10 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 1px solid #000;
+  border: 1px solid #fff;
   cursor: pointer;
   transition: all 0.3s ease-in-out;
+  /* background: #ddd; */
 }
 
 .cell:first-child,
@@ -66,14 +69,14 @@ body {
 .cell.x::before,
 .cell.circle::before,
 .cell.circle::after {
-  background: #000;
+  background: #fff;
 }
 
 .board.x .cell:not(.x):not(.circle):hover::before,
 .board.x .cell:not(.x):not(.circle):hover::after,
 .board.circle .cell:not(.x):not(.circle):hover::before,
 .board.circle .cell:not(.x):not(.circle):hover::after {
-  background: #ddd;
+  background: rgba(255, 255, 255, 0.2);
 }
 
 .cell.x::before,
@@ -118,7 +121,7 @@ body {
 }
 .cell.circle::after,
 .board.circle .cell:not(.x):not(.circle):hover::after {
-  background: #fff;
+  background: #002147;
   width: calc(var(--mark-size) * 0.6);
   height: calc(var(--mark-size) * 0.6);
   transition: all 0.3s ease-in-out;
