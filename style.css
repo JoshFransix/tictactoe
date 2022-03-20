@@ -208,7 +208,7 @@ body {
   position: relative;
   width: 60px;
   height: 26px;
-  background: #111;
+  background: #002147;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -224,7 +224,7 @@ body {
 }
 
 .checkbox:checked ~ .label {
-  background: #00333f;
+  background: #fff;
 }
 
 .ball {
@@ -239,7 +239,7 @@ body {
 }
 
 .checkbox:checked ~ .label .ball {
-  background: #222;
+  background: #002147;
   transform: translateX(33px);
   transition: all 0.3s ease-in-out;
 }
