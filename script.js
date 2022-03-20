@@ -95,3 +95,14 @@ function checkWin(currentClass) {
     });
   });
 }
+
+// Dark Mode
+
+const checkbox = document.getElementById("checkbox");
+// const cell = document.querySelectorAll(".cell");
+
+checkbox.addEventListener("click", () => {
+  // Change background color
+  document.body.classList.toggle("dark");
+  // cellElements.classList.toggle("dark");
+});
