@@ -10,6 +10,13 @@
   --mark-size: calc(var(--cell-size) * 0.9);
   --primary-color: #fff;
   --secondary-color: #000;
+  --tertiary-color: #ddd;
+}
+
+.dark {
+  --primary-color: #002147;
+  --secondary-color: #fff;
+  --tertiary-color: rgba(255, 255, 255, 0.2);
 }
 
 body {
@@ -17,6 +24,7 @@ body {
   margin: 0;
   overflow: hidden;
   transition: all 0.3s ease-in-out;
+  background: var(--primary-color);
 }
 
 /* body.dark {
@@ -93,8 +101,7 @@ body {
 .board.x .cell:not(.x):not(.circle):hover::after,
 .board.circle .cell:not(.x):not(.circle):hover::before,
 .board.circle .cell:not(.x):not(.circle):hover::after {
-  /* background: rgba(255, 255, 255, 0.2); */
-  background: #ddd;
+  background: var(--tertiary-color);
 }
 
 .cell.x::before,
@@ -157,16 +164,19 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  color: var(--primary-color);
+  /* color: var(--primary-color); */
+  color: #fff;
   font-size: 5rem;
 }
 
 .win-message button {
   outline: none;
   border: none;
-  border: 1px solid var(--primary-color);
+  /* border: 1px solid var(--primary-color); */
+  border: 1px solid #fff;
   border-radius: 10px;
-  color: var(--primary-color);
+  /* color: var(--primary-color); */
+  color: #fff;
   font-size: 2rem;
   padding: 1rem 2rem;
   background: #000;
