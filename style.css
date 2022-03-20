@@ -13,6 +13,7 @@
 body {
   margin: 0;
   background: #002147;
+  overflow: hidden;
 }
 
 .board {
@@ -163,4 +164,12 @@ body {
 
 .win-message.show {
   display: flex;
+}
+
+.label {
+  width: 50px;
+  height: 26px;
+  background: #111;
+  display: flex;
+  border-radius: 50px;
 }
