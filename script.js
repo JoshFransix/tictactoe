@@ -10,6 +10,7 @@ const winCombinations = [
   [2, 5, 8],
   [0, 4, 8],
   [2, 4, 6],
+  // [0, 4, 3, 6],
 ];
 
 const cellElements = document.querySelectorAll("[data-cell]");
@@ -58,7 +59,6 @@ function endGame(draw) {
   } else {
     winMessageTextElement.innerText = `${circleTurn ? "O" : "X"} Wins!!`;
   }
-
   winMessageElement.classList.add("show");
 }
 
@@ -106,3 +106,11 @@ checkbox.addEventListener("click", () => {
   document.body.classList.toggle("dark");
   // cellElements.classList.toggle("dark");
 });
+
+const numbers = [1, 4, 5, 6, 7, 8765, 4];
+
+const res = numbers.some((number) => {
+  return numbers > 7;
+});
+
+console.log(res);
